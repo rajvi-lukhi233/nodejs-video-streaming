@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --watch --env-file=.env src/app.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/rajvi-lukhi233/nodejs-video-streaming/issues"
   },
-  "homepage": "https://github.com/rajvi-lukhi233/nodejs-video-streaming#readme"
+  "homepage": "https://github.com/rajvi-lukhi233/nodejs-video-streaming#readme",
+  "dependencies": {
+    "bullmq": "^5.69.3",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "redis": "^5.11.0",
+    "smart-response": "^1.0.0"
+  }
 }
