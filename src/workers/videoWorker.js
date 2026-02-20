@@ -14,8 +14,9 @@ const worker = new Worker(
     const { file } = job.data;
     const uploadDir = path.resolve("src", "uploads", "videos", file);
     const outputDir = path.resolve("src", "uploads", "hls", file);
-
-    fs.mkdirSync(outputDir, { recursive: true });
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
     console.log(`worker started job ${job.id} file ${file}`);
     const cmd = `
     ffmpeg -i ${uploadDir} \
